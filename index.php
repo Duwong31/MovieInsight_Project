@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies Insight</title>
-    <link rel="stylesheet" href="manage_users/templates/css/styles.css">
-    <link rel="shorcut icon" href="manage_users/templates/img/icons8-movie-30.png">
+    <link rel="stylesheet" href="admin/templates/css/styles.css">
+    <link rel="shorcut icon" href="admin/templates/img/icons8-movie-30.png">
     <!--font-poppins-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="manage_users/templates/fonts/Awesome/css/all.css" rel="stylesheet" >
+    <link href="admin/templates/fonts/Awesome/css/all.css" rel="stylesheet" >
     <!--CSS SWIPPER-------------------------------------->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css">
 </head>
@@ -19,7 +19,7 @@
     <header>
         
         <a href="index.php" class="logo">
-            <img src="manage_users/templates/img/icons8-movie-30.png">
+            <img src="admin/templates/img/icons8-movie-30.png">
             <p>Movies<br>Insight</p>
         </a>
         <!--Nav-------------------------->  
@@ -47,9 +47,9 @@
 
                 <!--input-->
                 <div class="search-container">
-                    <img src="manage_users/templates/img/search.png" class="search-icon">
+                    <img src="admin/templates/img/search.png" class="search-icon">
                     <input type="text" name="search" class="search-input" placeholder="Search Movie Insight" id="searchInput">
-                    <img src="manage_users/templates/img/cross.png" class="clear-icon" id="clearIcon"></i>
+                    <img src="admin/templates/img/cross.png" class="clear-icon" id="clearIcon"></i>
                 </div>
             </form>
 
@@ -74,7 +74,7 @@
                         <!--img--------------------------------->
                         <!--1---------------------------------------------->
                         <div class="main-slider-img">
-                            <img src="manage_users/templates/img/venom3.jpg" alt="Poster Venom3">
+                            <img src="admin/templates/img/venom3.jpg" alt="Poster Venom3">
                         </div>
                         <div class="main-slider-text">
 
@@ -94,7 +94,7 @@
                         <!--img--------------------------------->
                         <!--2---------------------------------------------->
                         <div class="main-slider-img">
-                            <img src="manage_users/templates/img/venom3.jpg" alt="Poster Venom3">
+                            <img src="admin/templates/img/venom3.jpg" alt="Poster Venom3">
                         </div>
                         <div class="main-slider-text">
 
@@ -114,7 +114,7 @@
                         <!--img--------------------------------->
                         <!--3---------------------------------------------->
                         <div class="main-slider-img">
-                            <img src="manage_users/templates/img/venom3.jpg" alt="Poster Venom3">
+                            <img src="admin/templates/img/venom3.jpg" alt="Poster Venom3">
                         </div>
                         <div class="main-slider-text">
 
@@ -134,7 +134,7 @@
                         <!--img--------------------------------->
                         <!--4---------------------------------------------->
                         <div class="main-slider-img">
-                            <img src="manage_users/templates/img/venom3.jpg" alt="Poster Venom3">
+                            <img src="admin/templates/img/venom3.jpg" alt="Poster Venom3">
                         </div>
                         <div class="main-slider-text">
 
@@ -154,7 +154,7 @@
                         <!--img--------------------------------->
                         <!--5---------------------------------------------->
                         <div class="main-slider-img">
-                            <img src="manage_users/templates/img/venom3.jpg" alt="Poster Venom3">
+                            <img src="admin/templates/img/venom3.jpg" alt="Poster Venom3">
                         </div>
                         <div class="main-slider-text">
 
@@ -174,7 +174,7 @@
                         <!--img--------------------------------->
                         <!--6---------------------------------------------->
                         <div class="main-slider-img">
-                            <img src="manage_users/templates/img/venom3.jpg" alt="Poster Venom3">
+                            <img src="admin/templates/img/venom3.jpg" alt="Poster Venom3">
                         </div>
                         <div class="main-slider-text">
 
@@ -207,7 +207,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -219,7 +219,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -231,7 +231,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -243,7 +243,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -255,7 +255,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -267,7 +267,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -279,7 +279,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -291,7 +291,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -303,7 +303,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -315,7 +315,7 @@
             <div class="movie-card">
                 <div class="movie-image">
                     
-                    <img src="manage_users/templates/img/substande.jpg" class="movie-thumb" alt="">
+                    <img src="admin/templates/img/substande.jpg" class="movie-thumb" alt="">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
@@ -360,6 +360,6 @@
         });
       </script>
       
-    <script src="manage_users/templates/js/script.js"></script>
+    <script src="admin/templates/js/script.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@ const _ACTION = 'dashboard';
 
 const _CODE = true;
 //thiết lập host
-define('_WEB_HOST', 'http://' . $_SERVER['HTTP_HOST'] . '/MovieInsightProject/manage_users');
+define('_WEB_HOST', 'http://' . $_SERVER['HTTP_HOST'] . '/MovieInsightProject/admin');
 define('_WEB_HOST_TEMPLATES', _WEB_HOST . '/templates');
 
 //thiết lập path

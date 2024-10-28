@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý người dùng</title>
     <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATES; ?>/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATES; ?>/css/styles.css">
+    <!-- <link rel="stylesheet" href=" <?php echo _WEB_HOST_TEMPLATES; ?>/css/styles.css"> -->
     <link rel="stylesheet" href="templates/fonts/Awesome/css/all.css">
 </head>
 <body>

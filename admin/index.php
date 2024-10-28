@@ -3,7 +3,6 @@
 session_start();
 require_once('config.php');
 
-echo '<i class="fa-solid fa-house"></i>';
 
 $module = _MODULE;
 $action = _ACTION;
