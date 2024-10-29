@@ -6,6 +6,7 @@ $action = 'dashboard'; -->
 const _MODULE = 'home';
 const _ACTION = 'dashboard';
 
+
 const _CODE = true;
 //thiết lập host
 define('_WEB_HOST', 'http://' . $_SERVER['HTTP_HOST'] . '/MovieInsightProject/admin');
