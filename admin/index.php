@@ -3,9 +3,18 @@
 session_start();
 require_once('config.php');
 require_once('./include/connect.php');
+
+//Thư viên phpmailer
+require_once('./include/phpmailer/Exception.php');
+require_once('./include/phpmailer/PHPMailer.php');
+require_once('./include/phpmailer/SMTP.php');
+
 require_once('./include/functions.php');
 require_once('./include/database.php');
+require_once('./include/session.php');
 
+
+// sendMail('lyhue4321@gmail.com', 'Duong gui mail','Nội dung của email!!!');
 
 $module = _MODULE;
 $action = _ACTION;
