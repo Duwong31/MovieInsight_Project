@@ -380,7 +380,7 @@
         });
     </script>
 
-    <script src="admin/templates/js/script.js"></script>
+    <script src="/MovieInsightProject/admin/templates/js/script.js"></script>
 </body>
 
 </html>
