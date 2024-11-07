@@ -5,18 +5,6 @@ if (!defined('_CODE')) {
     die('Access denied...');
 }
 
-// $data = [
-//     'fullname' => 'Tuấn',
-//     'email' => 'Tuan222@gmail.com',
-//     'phone' => '0245251532',
-// ];
-// $condition = 'id = ?';
-// $params = [8];
-// $kq = oneRaw('SELECT * FROM users');
-// echo '<span>';
-// print_r($kq);
-// echo '</span>';
-
 if (isPost()) {
     $filterAll = filter();
     $errors = []; // mảng chứa các lỗi 
@@ -128,7 +116,7 @@ $old = getFlashData('old');
 
 <div class="row">
     <div class="col-4" style="margin: 50px auto;">
-        <h2 class="text-center text-uppercase">Đăng ký tài khoản admin</h2>
+        <h2 class="text-center text-uppercase">Đăng ký tài khoản</h2>
         <?php
         if (!empty($smg)) {
             getSmg($smg, $smg_type);
@@ -174,7 +162,7 @@ $old = getFlashData('old');
             <button type="submit" class="mg-btn btn btn-primary btn-block">Đăng ký</button>
             <hr>
 
-            <p class="text-center"><a href="?module=auth&action=login">Đăng nhập tài khoản</a></p>
+            <p class="text-center"><a href="?module=auth&action=loginUser">Đăng nhập tài khoản</a></p>
         </form>
     </div>
 </div>

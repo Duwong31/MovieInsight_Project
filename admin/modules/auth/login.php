@@ -80,7 +80,7 @@ $msg_type = getFlashData('msg_type');
 
 <div class="row">
     <div class="col-4" style="margin: 50px auto;">
-        <h2 class="text-center text-uppercase">Đăng nhập quản trị viên</h2>
+        <h2 class="text-center text-uppercase">Đăng nhập</h2>
         <?php
             if(!empty($msg)){
                 getSmg($msg, $msg_type);

@@ -27,9 +27,21 @@ productContainers.forEach((item, i) => {
 
     nxtBtn[i].addEventListener('click', () => {
         item.scrollLeft += containerWidth;
-    })
+    });
 
     preBtn[i].addEventListener('click', () => {
         item.scrollLeft -= containerWidth;
-    })
-})
+    });
+});
+//CHuyển hướng đến trang đăng nhập
+document.getElementById("login-btn").addEventListener("click", function() {
+    console.log("Button clicked");
+    window.location.href = "http://localhost/MovieInsightProject/admin/?module=auth&action=loginUser"; 
+});
+
+// Chuyển hướng đến trang đăng ký
+
+document.getElementById("sign-up-btn").addEventListener("click", function() {
+    console.log("Button clicked");
+    window.location.href = "http://localhost/MovieInsightProject/admin/?module=auth&action=signup"; 
+});

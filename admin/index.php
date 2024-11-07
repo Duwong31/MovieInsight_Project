@@ -14,8 +14,6 @@ require_once('./include/database.php');
 require_once('./include/session.php');
 
 
-// sendMail('lyhue4321@gmail.com', 'Duong gui mail','Nội dung của email!!!');
-
 $module = _MODULE;
 $action = _ACTION;
 
