@@ -5,8 +5,8 @@
     }
     $servername = "localhost";
     $username = "root"; 
-    $password = ""; 
-    $dbname = "laptrinhweb"; 
+    $password = "";
+    $dbname = "laptrinhweb";
     
     $con = mysqli_connect($servername, $username, $password, $dbname);
     
