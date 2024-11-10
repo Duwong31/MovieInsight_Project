@@ -8,6 +8,6 @@ if(isLogin()){
     $token = getSession('tokenlogin');
     delete('tokenlogin', "token='$token'");
     removeSession('tokenlogin');
-    redirect('?module=home&action=index');
+    redirect('http://localhost/MovieInsightProject/');
 }
 ?>

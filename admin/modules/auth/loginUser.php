@@ -47,6 +47,9 @@ if(isPost()){
                     //Lưu cái loginToken vào session
                     setSession('tokenlogin', $tokenLogin);
 
+                    // Đặt token vào cookie để duy trì đăng nhập trong 30 ngày
+                    setcookie("login_token", $tokenLogin, time() + (86400 * 30), "/");
+
                     redirect('?module=home&action=index');
                 }else{
                     setFlashData('msg', 'Không thể đăng nhập, vui lòng thử lại sau');
