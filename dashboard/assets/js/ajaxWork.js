@@ -90,12 +90,13 @@ function ChangePay(id){
 }
 
 
-//add product data
+//add movie data
 function addItems(){
     var p_name = $('#p_name').val();
     var p_desc = $('#p_desc').val();
     var p_director = $('#p_director').val(); 
     var genres = $('#genres').val(); 
+    var upload=$('#upload').val();
     var file = $('#file')[0].files[0];
 
     var fd = new FormData();
@@ -104,7 +105,7 @@ function addItems(){
     fd.append('p_director', p_director); 
     fd.append('genres', genres); // Thay category thành genres
     fd.append('file', file);
-    
+    fd.append('upload', upload);
     $.ajax({
         url: "./controller/addItemController.php",
         method: "post",
@@ -157,6 +158,7 @@ function updateItems() {
         processData: false,
         contentType: false,
         success: function(data) {
+            console.log(data);
             alert(data == "true" ? 'Data Update Success.' : 'Update Failed');
             $('form').trigger('reset');
             showProductItems();
@@ -164,14 +166,14 @@ function updateItems() {
     });
 }
 
-//delete product data
+//delete movie data
 function itemDelete(id){
     $.ajax({
         url:"./controller/deleteItemController.php",
         method:"post",
         data:{record:id},
         success:function(data){
-            alert('Items Successfully deleted');
+            alert('Movie Successfully deleted');
             $('form').trigger('reset');
             showProductItems();
         }

@@ -3,7 +3,7 @@
     include_once 'C:/xampp/htdocs/MovieInsightProject/admin/include/connect.php';
 
     
-    if(isset($_FILES['file'])) {
+    if(isset($_POST['upload'])) {
         $ProductName = $_POST['p_name'];
         $desc = $_POST['p_desc'];
         $director = $_POST['p_director'];
@@ -11,6 +11,7 @@
     
         $name = $_FILES['file']['name'];
         $temp = $_FILES['file']['tmp_name'];
+        
         $location = "./uploads/";
         $image = $location . $name;
     
