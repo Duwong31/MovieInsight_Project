@@ -158,8 +158,7 @@ function updateItems() {
         processData: false,
         contentType: false,
         success: function(data) {
-            console.log(data);
-            alert(data == "true" ? 'Data Update Success.' : 'Update Failed');
+            alert('Data Update Success.');
             $('form').trigger('reset');
             showProductItems();
         }

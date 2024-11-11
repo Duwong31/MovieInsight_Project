@@ -36,7 +36,7 @@
       <label>Genres:</label>
       <select id="genres">
         <?php
-          $sql="SELECT * from genres WHERE genres_id='$genID'";
+          $sql="SELECT * from genres WHERE genres_id='$catID'";
           $result = $con-> query($sql);
           if ($result-> num_rows > 0){
             while($row = $result-> fetch_assoc()){

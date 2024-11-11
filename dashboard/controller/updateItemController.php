@@ -17,6 +17,8 @@ const _CODE = true;
         $image = rand(1000, 1000000) . "." . $ext;
         $final_image = $dir . $image;
         if (in_array($ext, $valid_extensions) && move_uploaded_file($tmp, $final_image)) {
+            $location = './uploads/';
+            $final_image = $location . $image;
         } else {
             echo "Error uploading the file.";
             exit;

@@ -134,7 +134,7 @@
             ?>
        <div class="movie-card">
                 <div class="movie-image">
-                    <img src="<?php echo htmlspecialchars($value['movie_image']); ?>" class="movie-thumb" alt="<?php echo htmlspecialchars($value['movie_name']); ?>">
+                    <img src="./dashboard/<?php echo htmlspecialchars($value['movie_image']); ?>" class="movie-thumb" alt="<?php echo htmlspecialchars($value['movie_name']); ?>">
                     <button class="card-btn">Add to watchlist</button>
                 </div>
                 <div class="movie-info">
