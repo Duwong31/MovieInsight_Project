@@ -39,9 +39,11 @@
                     <img src="/MovieInsightProject/admin/templates/img/cross.png" class="clear-icon" id="clearIcon" alt="Clear Icon">
                 </div>
             </form>
+            <button id="watchlist-btn"><i class="fa-solid fa-plus"></i>Watchlist</button>
             <button id="news-btn">News</button>
             <!-- Conditional Login/Logout Elements -->
             <?php if (isLogin()): ?>
+                
                 <!-- Profile Dropdown -->
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,14 +87,14 @@
                         <div class="main-slider-box">
                             <div class="main-slider-img">
                                 <form action="" method="post">
-                                    <img src="<?php echo $value['movie_image']; ?>" alt="<?php echo $value['movie_name']; ?>">
+                                    <img src="./dashboard/<?php echo $value['movie_image']; ?>" alt="<?php echo $value['movie_name']; ?>">
                                 </form>
                             </div>
                             <div class="main-slider-text">
                                 <div class="movie-name">
                                     <span>2024</span>
                                     <strong><?php echo $value['movie_name']; ?></strong>
-                                    <p><?php echo $value['description']; ?></p>
+                                    <p><?php echo $value['movie_desc']; ?></p>
                                 </div>
                             </div>
                         </div>

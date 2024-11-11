@@ -251,7 +251,8 @@
 
     /*sign in button*/
     #login-btn,
-    #news-btn {
+    #news-btn,
+    #watchlist-btn {
         background-color: var(--header);
         padding: 5px 10px;
         border: none;
@@ -259,7 +260,7 @@
         margin-left: 20px;
         cursor: pointer;
         box-sizing: border-box;
-        border-radius: 50%;
+        border-radius: 20%;
     }
 
     #login-btn:hover,
