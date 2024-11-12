@@ -15,12 +15,12 @@
          if(!$insert)
          {
              echo mysqli_error($con);
-             header("Location: ../dashboard.php?genres=error");
+             header("Location: ../admin.php?genres=error");
          }
          else
          {
              echo "Records added successfully.";
-             header("Location: ../dashboard.php?category=success");
+             header("Location: ../admin.php?category=success");
          }
      
     }

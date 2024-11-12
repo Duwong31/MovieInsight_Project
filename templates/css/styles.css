@@ -249,7 +249,7 @@
         cursor: pointer;
     }
 
-    /*sign in button*/
+
     #login-btn,
     #news-btn,
     #watchlist-btn {
@@ -260,11 +260,12 @@
         margin-left: 20px;
         cursor: pointer;
         box-sizing: border-box;
-        border-radius: 20%;
+        border-radius: 30%;
     }
 
     #login-btn:hover,
-    #news-btn:hover {
+    #news-btn:hover,
+    #watchlist-btn:hover {
         background-color: #272626;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
@@ -612,6 +613,9 @@
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         z-index: 1000;
+    }
+    .rate-link:hover + .rating-form {
+        display: block;
     }
     
     .close-btn {
