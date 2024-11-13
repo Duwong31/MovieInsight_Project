@@ -367,6 +367,7 @@ ALTER TABLE `tokenlogin`
 -- Constraints for table `watchlist`
 --
 ALTER TABLE `watchlist`
+  ADD PRIMARY KEY(`watch_id`);
   ADD CONSTRAINT `watchlist_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `watchlist_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `movies` (`movie_id`);
 COMMIT;
@@ -375,6 +376,10 @@ ALTER TABLE `movies` DROP INDEX `movies_ibfk_2`;
 
 ALTER TABLE ratings
     MODIFY rating decimal(2,1) DEFAULT NULL CHECK (`rating` >= 0 and `rating` <= 10);
+
+ALTER TABLE `movies` 
+  DROP `release_date`;
+  ADD `release_date` INT(10) NOT NULL AFTER `movie_name`;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

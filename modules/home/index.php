@@ -61,7 +61,7 @@
         <div class="swiper-button-next"></div>
     </div>
 
-    <section class="movie"> 
+    <section id="movie-section" class="movie"> 
     <h2 class="movie-category">Movies</h2>
     <button class="pre-btn"> < </button>
     <button class="nxt-btn"> > </button>
@@ -102,11 +102,12 @@ $stmt->close();
         // Loop through the movies to display them
         foreach ($movies_array as $value) {
             $userRating = $value['user_rating'];
+            $movie = $value['movie_id'];
             ?>
        <div class="movie-card">
                 <div class="movie-image">
                     <img src="./admin/<?php echo htmlspecialchars($value['movie_image']); ?>" class="movie-thumb" alt="<?php echo htmlspecialchars($value['movie_name']); ?>">
-                    <button class="card-btn">Add to watchlist</button>  
+                    <button class="addToWatchlist-btn" onclick="addToWatchlist(<?php echo $movie; ?>)">Add to watchlist</button>  
                 </div>
                 <div class="movie-info">
                     <div class="movie-rating">
@@ -135,7 +136,13 @@ $stmt->close();
         }
         ?>
     </div>
+    
 </section>
+
+<section id="tvshow-section" class="tv-show"></section>
+
+<section id="celeb-section" class="celebrities"></section>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     <script>
@@ -162,6 +169,7 @@ $stmt->close();
         });
     </script>
     <script src="./templates/js/script.js"></script>
+    <script src="./templates/js/ajax.js"></script>
     <?php
     include('footer.php');
     ?>

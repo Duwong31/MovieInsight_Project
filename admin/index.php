@@ -105,8 +105,7 @@
             }
         ?>
 
-
-    <script type="text/javascript" src="./assets/js/ajaxWork.js"></script>    
+ 
     <script type="text/javascript" src="./assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>

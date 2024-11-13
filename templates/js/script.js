@@ -37,6 +37,7 @@ productContainers.forEach((item, i) => {
 document.addEventListener("DOMContentLoaded", function() {
     const loginBtn = document.getElementById("login-btn");
     const signUpBtn = document.getElementById("sign-up-btn");
+    const watchlistBtn = document.getElementById("watchlist-btn");
 
     if (loginBtn) {
         loginBtn.addEventListener("click", function() {
@@ -49,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
         signUpBtn.addEventListener("click", function() {
             console.log("Button clicked");
             window.location.href = "http://localhost/MovieInsightProject/?module=auth&action=signup"; 
+        });
+    }
+    if (watchlistBtn) {
+        watchlistBtn.addEventListener("click", function() {
+            console.log("Button clicked");
+            window.location.href = "http://localhost/MovieInsightProject/?module=watchlist&action=viewWatchlist"; 
         });
     }
 });
@@ -132,3 +139,4 @@ document.querySelectorAll('.star').forEach(star => {
         
     });
 });
+

@@ -10,9 +10,9 @@
         </label>
         <a class="menu-tag">Menu</a>
         <ul class="menu">
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">TV Shows</a></li>
-            <li><a href="#">Celebs</a></li>
+            <li><a href="#movie-section">Movies</a></li>
+            <li><a href="#tvshow-section">TV Shows</a></li>
+            <li><a href="#celeb-section">Celebs</a></li>
             <li><a href="#">Community</a></li>
             <li><a href="#">Awards & Events</a></li>
         </ul>
@@ -34,7 +34,7 @@
                     <i class="fa-solid fa-user"></i>
                 </a>
                 <ul class="dropdown-menu text-small">
-                    <li><a class="dropdown-item" href="#">Your watchlist</a></li>
+                    <li><a class="dropdown-item" href="?module=watchlist&action=viewWatchlist">Your watchlist</a></li>
                     <li><a class="dropdown-item" href="#">Your ratings</a></li>
                     <li><a class="dropdown-item" href="#">Account Settings</a></li>
                     <li>
