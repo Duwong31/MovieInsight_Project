@@ -13,59 +13,9 @@
     <link href="./templates/fonts/Awesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css">
 </head>
-<body>
-        <header>
-            <a href="index.php" class="logo">
-                <img src="./templates/img/icons8-movie-30.png" alt="Movie Insight Logo">
-                <p>Movies<br>Insight</p>
-            </a>
-            <nav class="navigation">
-                <input type="checkbox" class="menu-btn" id="menu-btn">
-                <label for="menu-btn" class="menu-icon">
-                    <span class="nav-icon"></span>
-                </label>
-                <a class="menu-tag">Menu</a>
-                <ul class="menu">
-                    <li><a href="#">Movies</a></li>
-                    <li><a href="#">TV Shows</a></li>
-                    <li><a href="#">Celebs</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Awards & Events</a></li>
-                </ul>
-                <form action="" class="search-box">
-                    <div class="search-container">
-                        <img src="./templates/img/search.png" class="search-icon" alt="Search Icon">
-                        <input type="text" name="search" class="search-input" placeholder="Search Movie Insight" id="searchInput">
-                        <img src="./templates/img/cross.png" class="clear-icon" id="clearIcon" alt="Clear Icon">
-                    </div>
-                </form>
-                <button id="watchlist-btn"><i class="fa-solid fa-plus"></i> Watchlist</button>
-                <button id="news-btn">News</button>
-                <!-- Conditional Login/Logout Elements -->
-                <?php if (isLogin()): ?>
-                    
-                    <!-- Profile Dropdown -->
-                    <div class="dropdown text-end">
-                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="User Profile" width="32" height="32" class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu text-small">
-                            <li><a class="dropdown-item" href="#">Cài đặt</a></li>
-                            <li><a class="dropdown-item" href="#">Thông tin người dùng</a></li>
-                            <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="?module=auth&action=logoutUser">Đăng xuất</a></li>
-                        </ul>
-                    </div>
-                <?php else: ?>
-                    <!-- Login and Sign Up Buttons -->
-                    <button id="login-btn">Login</button>
-                    <button id="sign-up-btn">Sign up</button>
-                <?php endif; ?>
-            </nav>
-        </header>
+<body>  
+    <?php include('header.php'); ?>
+    
 
     <section id="main-slider">
         <div class="swiper mySwiper">
@@ -128,34 +78,51 @@
         const loggedInUserId = <?php echo json_encode($loggedInUserId); ?>;
         </script>
         <?php
-        // Fetch movies from the database
-        $result = $con->query("SELECT m.*, COALESCE(AVG(r.rating), 0) AS average_rating
-        FROM movies m
-        LEFT JOIN ratings r ON m.movie_id = r.movie_id
-        GROUP BY m.movie_id");
-        $movies_array = [];
-        if ($result) {
-            while ($row = $result->fetch_assoc()) {
-                $movies_array[] = $row;
-            }
-        }
+        // Fetch movies from the database with user-specific rating
+$query = "
+SELECT m.*, 
+       COALESCE(AVG(r.rating), 0) AS average_rating,
+       (SELECT rating FROM ratings WHERE movie_id = m.movie_id AND user_id = ?) AS user_rating
+FROM movies m
+LEFT JOIN ratings r ON m.movie_id = r.movie_id
+GROUP BY m.movie_id";
+$stmt = $con->prepare($query);
+$stmt->bind_param("i", $loggedInUserId);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$movies_array = [];
+if ($result) {
+while ($row = $result->fetch_assoc()) {
+    $movies_array[] = $row;
+}
+}
+$stmt->close();
 
         // Loop through the movies to display them
         foreach ($movies_array as $value) {
+            $userRating = $value['user_rating'];
             ?>
        <div class="movie-card">
                 <div class="movie-image">
                     <img src="./admin/<?php echo htmlspecialchars($value['movie_image']); ?>" class="movie-thumb" alt="<?php echo htmlspecialchars($value['movie_name']); ?>">
-                    <button class="card-btn">Add to watchlist</button>
+                    <button class="card-btn">Add to watchlist</button>  
                 </div>
                 <div class="movie-info">
                     <div class="movie-rating">
                         <span class="rating-score">★ <?php echo number_format($value['average_rating'], 1); ?>/10</span>
-                        <span class="rate-button"><a href="#" class="rate-link" data-movie-id="<?php echo $value['movie_id']; ?>">☆ Rate</a></span>
+                        <span class="rate-button">
+                            <?php if ($userRating): ?>
+                                <a href="#" class="rate-link rated" data-movie-id="<?php echo $value['movie_id']; ?>">★ <?php echo round($userRating); ?></a>
+                            <?php else: ?>
+                                <a href="#" class="rate-link" data-movie-id="<?php echo $value['movie_id']; ?>">☆ Rate</a>
+                            <?php endif; ?>
+                        </span>
                     </div>
                     <h4 class="movie-name"><?php echo htmlspecialchars($value['movie_name']); ?></h4>
                 </div>
                 <div data-movie-id="<?php echo $value['movie_id']; ?>" class="rating-form"> 
+                    <p class = "rating-form-name"><?php echo $value['movie_name']; ?></p>
                     <span class="close-btn" id="close-btn">X</span>  
                     <div class="stars"> 
                         <?php for ($i = 1; $i <= 10; $i++): ?> 
@@ -195,5 +162,8 @@
         });
     </script>
     <script src="./templates/js/script.js"></script>
+    <?php
+    include('footer.php');
+    ?>
 </body>
 </html>

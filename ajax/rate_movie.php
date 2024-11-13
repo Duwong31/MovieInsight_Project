@@ -6,25 +6,6 @@ $response = array('success' => false);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
 
-    // Check for missing fields
-    if (!isset($data['movie_id'])) {
-        $response['error'] = 'Movie ID is missing.';
-        echo json_encode($response);
-        exit;
-    }
-
-    if (!isset($data['rating'])) {
-        $response['error'] = 'Rating is missing.';
-        echo json_encode($response);
-        exit;
-    }
-
-    if (!isset($data['user_id'])) {
-        $response['error'] = 'User ID is missing.';
-        echo json_encode($response);
-        exit;
-    }
-
     $movie_id = $data['movie_id'];
     $rating = $data['rating'];
     $user_id = $data['user_id'];

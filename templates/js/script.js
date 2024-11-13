@@ -61,12 +61,20 @@ document.querySelectorAll('.close-btn').forEach(function (closeBtn) {
         this.parentElement.style.display = 'none'; 
     });
 });
+// Đóng form khi nhấp ra ngoài
+window.addEventListener('click', function(event) {
+    document.querySelectorAll('.rating-form').forEach(form => {
+        if (!form.contains(event.target) && form.style.display === 'block') {
+            form.style.display = 'none';
+        }
+    });
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.rate-link').forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
-
+            event.stopPropagation();
             const movieId = this.dataset.movieId;
 
             if (!isLoggedIn) {
@@ -84,7 +92,6 @@ document.querySelectorAll('.star').forEach(star => {
     star.addEventListener('click', function() {
         const ratingValue = this.dataset.value;
         const movieId = this.closest('.rating-form').dataset.movieId;
-        console.log("User ID:", loggedInUserId); // Add this line to check if user_id is being set
         console.log("Sending data:", { movie_id: movieId, rating: ratingValue, user_id: loggedInUserId });
         fetch('./ajax/rate_movie.php', {
             method: 'POST',
@@ -94,12 +101,20 @@ document.querySelectorAll('.star').forEach(star => {
             body: JSON.stringify({ movie_id: movieId, rating: ratingValue, user_id: loggedInUserId })
         })
         .then(response => {
+            console.log(response);
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
         })  
         .then(data => {
             if (data.success) {
                 alert("Thank you for rating!");
+                const rateButton = document.querySelector(`.rate-link[data-movie-id="${movieId}"]`); 
+                if (rateButton) { 
+                    rateButton.textContent = `★ ${ratingValue}`; 
+                    rateButton.classList.add('rated'); 
+                } else { 
+                    console.warn("Rate button element not found."); 
+                }
                 const ratingScoreElement = document.querySelector(`.movie-card[data-movie-id="${movieId}"] .rating-score`);
                 if (ratingScoreElement) {
                     ratingScoreElement.textContent = `★ ${data.new_average_rating}/10`;

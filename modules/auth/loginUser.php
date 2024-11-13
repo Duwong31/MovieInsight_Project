@@ -30,9 +30,14 @@ if(isPost()){
             $passwordHash = $userQuery['password'];
             $user_id = $userQuery['id'];
             if(password_verify($password, $passwordHash)){
-                
+                // Lưu user_id vào session khi chèn token thành công
+                setSession('user_id', $user_id);
+
                 //Tạo tokenLogin
                 $tokenLogin = sha1(uniqid().time());
+
+                // Lưu token vào session
+                setSession('tokenlogin', $tokenLogin);
 
                 //Insert vào bảng tokenlogin
                 $dataInsert = [
