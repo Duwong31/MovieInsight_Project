@@ -13,7 +13,7 @@
             <li><a href="#movie-section">Movies</a></li>
             <li><a href="#tvshow-section">TV Shows</a></li>
             <li><a href="#celeb-section">Celebs</a></li>
-            <li><a href="#">News</a></li>
+            <li><a href="#news">News</a></li>
         </ul>
         <form action="" class="search-box">
             <div class="search-container">
