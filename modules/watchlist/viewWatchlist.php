@@ -62,10 +62,6 @@ if(!defined('_CODE')){
     ?>
     <div class="watchlist-container">
         <h1 class="watchlist-title">Your Watchlist</h1>
-        <p class="watchlist-description">
-            Your Watchlist is the place to track the titles you want to watch.</br>
-            Add or remove items as you like.
-        </p>
 
         <div class="watchlist-items">
             <?php
@@ -76,15 +72,17 @@ if(!defined('_CODE')){
                         <div class="watchlist-movie-image">
                             <img src="./admin/' . htmlspecialchars($movie['movie_image']) . '" alt="' . htmlspecialchars($movie['movie_name']) . '">
                         </div>
-                        <div class="watch-movie-info">
+                        <div class="watchlist-movie-info">
                             <h2>' . htmlspecialchars($movie['movie_name']) . '</h2>
-                            <p>' . htmlspecialchars($movie['movie_desc']) . '</p>
                             <div class="movie-meta">
                                 <span>⭐ ' . number_format($movie['average_rating'], 1) . '/10</span>
                                 <span> ' . htmlspecialchars($movie['release_date']) . '</span>
                             </div>
-                            <button class="remove-button" onclick="removeFromWatchlist(' . $movie['movie_id'] . ')"><i class="fa-solid fa-trash"></i></button>
+                            <p>' . htmlspecialchars($movie['movie_desc']) . '</p>
+                            
+                            
                         </div>
+                        <button class="remove-button" onclick="removeFromWatchlist(' . $movie['movie_id'] . ')"><i class="fa-solid fa-minus"></i></button>
                     </div>
                     ';
                 }

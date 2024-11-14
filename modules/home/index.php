@@ -130,6 +130,7 @@ $stmt->close();
                             <span class="star" data-value="<?php echo $i; ?>">☆</span> 
                         <?php endfor; ?> 
                     </div> 
+                    <button class="remove-rating-btn" style="display: none;">Remove Rating</button>
                 </div> 
             </div>
         <?php

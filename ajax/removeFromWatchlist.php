@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('../admin/include/connect.php'); // Kết nối cơ sở dữ liệu
 
 if (!isset($_SESSION['user_id']) || !isset($_GET['movie_id'])) {

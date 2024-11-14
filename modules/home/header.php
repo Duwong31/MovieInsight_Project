@@ -13,8 +13,7 @@
             <li><a href="#movie-section">Movies</a></li>
             <li><a href="#tvshow-section">TV Shows</a></li>
             <li><a href="#celeb-section">Celebs</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Awards & Events</a></li>
+            <li><a href="#">News</a></li>
         </ul>
         <form action="" class="search-box">
             <div class="search-container">
@@ -23,7 +22,18 @@
                 <img src="./templates/img/cross.png" class="clear-icon" id="clearIcon" alt="Clear Icon">
             </div>
         </form>
-        <button id="watchlist-btn"><i class="fa-solid fa-plus"></i> Watchlist</button>
+        <button id="watchlist-btn" onclick="handleWatchlist()"><i class="fa-solid fa-plus"></i> Watchlist</button>
+        <script>
+            function handleWatchlist() {
+                <?php if (isLogin()): ?>
+                    // Nếu người dùng đã đăng nhập, điều hướng đến trang watchlist
+                    window.location.href = "?module=watchlist&action=viewWatchlist";
+                <?php else: ?>
+                    // Nếu người dùng chưa đăng nhập, điều hướng đến trang đăng nhập
+                    window.location.href = "?module=auth&action=loginUser";
+                <?php endif; ?>
+            }
+        </script>
         <button id="news-btn">News</button>
         <!-- Conditional Login/Logout Elements -->
         <?php if (isLogin()): ?>

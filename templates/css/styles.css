@@ -629,25 +629,7 @@ a {
     grid-column: span 2;
     margin-bottom: 10px;
 }
-
-/*page-number-------------------------*/
-.page-number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #464646;
-    margin-top: 50px;
-}
-
-.page-number a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    margin: 0px 13px;
-    opacity: 0.5;
-}
-
+/*rating*/
 .rating-form {
     display: none;
     position: fixed;
@@ -659,12 +641,9 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
-.rating-form-name{
-    color: var(--whitegr);
-}
 
-.rate-link:hover+.rating-form {
-    display: block;
+.rating-form-name {
+    color: white;
 }
 
 .close-btn {
@@ -686,13 +665,20 @@ a {
     font-size: 24px;
     cursor: pointer;
     color: white;
+    transition: color 0.2s;
 }
 
+/* Màu của sao khi được hover */
+.star.hovered {
+    color: gold;
+}
+
+/* Màu của sao khi được đánh giá */
 .rated {
-    
     color: #000;
     font-weight: bold;
 }
+
 /*WATCH-LIST*/
 .watchlist-container {
     max-width: 800px;
@@ -708,12 +694,6 @@ a {
     font-weight: bold;
     color: white;
     text-align: center;
-}
-
-.watchlist-description {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 20px;
 }
 
 .watchlist-items {
@@ -748,7 +728,7 @@ a {
 }
 
 .watchlist-movie-info p {
-    font-size: 14px;
+    font-size: 12px;
     margin: 0 0 10px;
 }
 
@@ -759,7 +739,8 @@ a {
     gap: 15px;
 }
 
-.remove-button {
+.remove-rating-btn {
+    margin-top: 10px;
     padding: 5px 10px;
     background-color: #d9534f;
     color: #fff;
@@ -767,8 +748,9 @@ a {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    display: none;
 }
 
-.remove-button:hover {
+.remove-rating-btn:hover {
     background-color: #c9302c;
 }

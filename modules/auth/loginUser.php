@@ -33,33 +33,43 @@ if(isPost()){
                 // Lưu user_id vào session khi chèn token thành công
                 setSession('user_id', $user_id);
 
-                //Tạo tokenLogin
-                $tokenLogin = sha1(uniqid().time());
+                $userLogin = getRows("SELECT * FROM tokenlogin WHERE user_id = '$user_id'");
 
-                // Lưu token vào session
-                setSession('tokenlogin', $tokenLogin);
+                if($userLogin > 0){
+                    setFlashData('msg', 'Tài khoản đang đăng nhập ở một nơi khác!');
+                    setFlashData('msg_type', 'danger');
+                    redirect('?module=auth&action=loginUser');
+                }
+                else{
+                    //Tạo tokenLogin
+                    $tokenLogin = sha1(uniqid().time());
 
-                //Insert vào bảng tokenlogin
-                $dataInsert = [
-                    'user_id' => $user_id,
-                    'token' => $tokenLogin,
-                    'create_at' => date('Y-m-d H:i:s')
-                ];
-                $insertStatus = insert('tokenlogin',$dataInsert);
-                if($insertStatus){
-                    //Insert thành công
-
-                    //Lưu cái loginToken vào session
+                    // Lưu token vào session
                     setSession('tokenlogin', $tokenLogin);
 
-                    // Đặt token vào cookie để duy trì đăng nhập trong 30 ngày
-                    setcookie("login_token", $tokenLogin, time() + (86400 * 30), "/");
+                    //Insert vào bảng tokenlogin
+                    $dataInsert = [
+                        'user_id' => $user_id,
+                        'token' => $tokenLogin,
+                        'create_at' => date('Y-m-d H:i:s')
+                    ];
+                    $insertStatus = insert('tokenlogin',$dataInsert);
+                    if($insertStatus){
+                        //Insert thành công
 
-                    redirect('?module=home&action=index');
-                }else{
-                    setFlashData('msg', 'Không thể đăng nhập, vui lòng thử lại sau');
-                    setFlashData('msg_type', 'danger');
+                        //Lưu cái loginToken vào session
+                        setSession('tokenlogin', $tokenLogin);
+
+                        // Đặt token vào cookie để duy trì đăng nhập trong 30 ngày
+                        setcookie("login_token", $tokenLogin, time() + (86400 * 30), "/");
+
+                        redirect('?module=home&action=index');
+                    }else{
+                        setFlashData('msg', 'Không thể đăng nhập, vui lòng thử lại sau');
+                        setFlashData('msg_type', 'danger');
+                    }
                 }
+                
 
                 
             }else{
