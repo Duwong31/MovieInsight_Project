@@ -37,18 +37,25 @@ productContainers.forEach((item, i) => {
 document.addEventListener("DOMContentLoaded", function() {
     const loginBtn = document.getElementById("login-btn");
     const signUpBtn = document.getElementById("sign-up-btn");
+    const newsBtn = document.getElementById("news-btn");
 
     if (loginBtn) {
         loginBtn.addEventListener("click", function() {
             console.log("Button clicked");
-            window.location.href = "http://localhost/MovieInsightProject/?module=auth&action=loginUser"; 
+            window.location.href = "?module=auth&action=loginUser"; 
         });
     }
 
     if (signUpBtn) {
         signUpBtn.addEventListener("click", function() {
             console.log("Button clicked");
-            window.location.href = "http://localhost/MovieInsightProject/?module=auth&action=signup"; 
+            window.location.href = "?module=auth&action=signup"; 
+        });
+    }
+    if(newsBtn){
+        newsBtn.addEventListener("click", function() {
+            console.log("Button clicked");
+            window.location.href = "?module=watchlist&action=news"; 
         });
     }
 });

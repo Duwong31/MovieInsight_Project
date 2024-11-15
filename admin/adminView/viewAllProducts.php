@@ -59,9 +59,22 @@
               <label for="name">Movie Name:</label>
               <input type="text" class="form-control" id="p_name" required>
             </div>
+            <div class="form-date-duration">
+              <div><label for="qty">Release date:</label>
+                <input type="text" class="" id="p_date" required>
+              </div>
+              <div>
+                <label for="qty">Duration:</label>
+                <input type="text" class="" id="p_duration" required>
+              </div>
+            </div>
             <div class="form-group">
               <label for="director">Director:</label>
               <input type="text" class="form-control" id="p_director" required>
+            </div>
+            <div class="form-group">
+              <label for="qty">Actors (Seperated by comma):</label>
+              <input type="text" class="form-control" id="p_actors" required>
             </div>
             <div class="form-group">
               <label for="qty">Description:</label>

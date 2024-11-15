@@ -759,11 +759,10 @@ a {
 
 /*footer*/
 footer {
-    background-color: #121212;
+    background-color: var(--main);
     color: #ffffff;
     padding: 40px 20px;
     font-family: 'Arial', sans-serif;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -819,14 +818,14 @@ footer p {
 }
 
 footer a {
-    color: #ff4b4b;
+    color: white;
     text-decoration: none;
     font-size: 0.95em;
     transition: color 0.3s ease, transform 0.2s;
 }
 
 footer a:hover {
-    color: #ffffff;
+    color: var(--red);
     transform: translateX(5px);
 }
 
@@ -919,4 +918,8 @@ footer .copyright {
     .social-icons {
         justify-content: center;
     }
+}
+.form-date-duration{
+    display: flex;
+    
 }

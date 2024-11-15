@@ -95,7 +95,15 @@ $msg_type = getFlashData('msg_type');
 
 
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./templates/img/icons8-movie-30.png">
+    <title>Login</title>
+</head>
+<body>
 <div class="row">
     <div class="col-4" style="margin: 50px auto;">
         <h2 class="text-center text-uppercase">Đăng nhập</h2>
@@ -121,6 +129,9 @@ $msg_type = getFlashData('msg_type');
         </form>    
     </div>
 </div>
+</body>
+</html>
+
 
 
 

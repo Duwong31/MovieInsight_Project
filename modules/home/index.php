@@ -106,7 +106,7 @@ $stmt->close();
             ?>
        <div class="movie-card">
                 <div class="movie-image">
-                    <a href="?module=watchlist&action=movie_detail&movie_id='<?php echo $value['movie_id']; ?>'">
+                    <a href="?module=watchlist&action=movie_detail&movie_id=<?php echo $value['movie_id']; ?>">
                         <img src="./admin/<?php echo htmlspecialchars($value['movie_image']); ?>" class="movie-thumb" alt="<?php echo htmlspecialchars($value['movie_name']); ?>">
                     </a>
                     <button class="addToWatchlist-btn" onclick="addToWatchlist(<?php echo $movie; ?>)">Add to watchlist</button>  
@@ -142,9 +142,14 @@ $stmt->close();
     
 </section>
 
-<section id="tvshow-section" class="tv-show"></section>
+<section id="tvshow-section" class="movie">
+    <h2 class="movie-category">TV Shows</h2>
 
-<section id="celeb-section" class="celebrities"></section>
+</section>
+
+<section id="celeb-section" class="movie">
+    <h2 class="movie-category">Celebrities</h2>
+</section>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>

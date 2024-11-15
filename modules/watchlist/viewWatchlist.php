@@ -95,5 +95,8 @@ if(!defined('_CODE')){
     </div>
     <script src="./templates/js/script.js"></script>
     <script src="./templates/js/ajax.js"></script>
+    <?php 
+    include(__DIR__ . '/../home/footer.php');
+    ?>
 </body>
 </html>

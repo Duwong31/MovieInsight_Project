@@ -20,26 +20,7 @@ function showCategory(){
         }
     });
 }
-function showSizes(){  
-    $.ajax({
-        url:"./adminView/viewSizes.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-function showProductSizes(){  
-    $.ajax({
-        url:"./adminView/viewProductSizes.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
+
 
 function showCustomers(){
     $.ajax({
@@ -52,57 +33,25 @@ function showCustomers(){
     });
 }
 
-function showOrders(){
-    $.ajax({
-        url:"./adminView/viewAllOrders.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-
-function ChangeOrderStatus(id){
-    $.ajax({
-       url:"./controller/updateOrderStatus.php",
-       method:"post",
-       data:{record:id},
-       success:function(data){
-           alert('Order Status updated successfully');
-           $('form').trigger('reset');
-           showOrders();
-       }
-   });
-}
-
-function ChangePay(id){
-    $.ajax({
-       url:"./controller/updatePayStatus.php",
-       method:"post",
-       data:{record:id},
-       success:function(data){
-           alert('Payment Status updated successfully');
-           $('form').trigger('reset');
-           showOrders();
-       }
-   });
-}
-
-
 //add movie data
 function addItems(){
     var p_name = $('#p_name').val();
+    var p_date = $('#p_date').val();
+    var p_duration = $('#p_duration').val();
     var p_desc = $('#p_desc').val();
     var p_director = $('#p_director').val(); 
+    var p_actors = $('#p_actors').val(); 
     var genres = $('#genres').val(); 
     var upload=$('#upload').val();
     var file = $('#file')[0].files[0];
 
     var fd = new FormData();
     fd.append('p_name', p_name);
+    fd.append('p_date', p_date);
+    fd.append('p_duration', p_duration);
     fd.append('p_desc', p_desc);
     fd.append('p_director', p_director); 
+    fd.append('p_actors', p_actors);
     fd.append('genres', genres); // Thay category thành genres
     fd.append('file', file);
     fd.append('upload', upload);
@@ -134,10 +83,14 @@ function itemEditForm(id){
 
 //update product after submit
 function updateItems() {
+
     var movie_id = $('#movie_id').val();
     var p_name = $('#p_name').val();
+    var p_date = $('#p_date').val();
+    var p_duration = $('#p_duration').val();
     var p_desc = $('#p_desc').val();
     var p_director = $('#p_director').val();
+    var p_actors = $('#p_actors').val(); 
     var genres = $('#genres').val();
     var existingImage = $('#existingImage').val();
     var newImage = $('#newImage')[0].files[0];
@@ -145,8 +98,11 @@ function updateItems() {
     var fd = new FormData();
     fd.append('movie_id', movie_id);
     fd.append('p_name', p_name);
+    fd.append('p_date', p_date);
+    fd.append('p_duration', p_duration);
     fd.append('p_desc', p_desc);
     fd.append('p_director', p_director);
+    fd.append('p_actors', p_actors);
     fd.append('genres', genres);
     fd.append('existingImage', existingImage);
     fd.append('newImage', newImage);
@@ -179,34 +135,6 @@ function itemDelete(id){
     });
 }
 
-
-//delete cart data
-function cartDelete(id){
-    $.ajax({
-        url:"./controller/deleteCartController.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Cart Item Successfully deleted');
-            $('form').trigger('reset');
-            showMyCart();
-        }
-    });
-}
-
-function eachDetailsForm(id){
-    $.ajax({
-        url:"./view/viewEachDetails.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-
-
-
 //delete genres data
 function genresDelete(id){
     $.ajax({
@@ -235,59 +163,6 @@ function sizeDelete(id){
     });
 }
 
-
-//delete variation data
-function variationDelete(id){
-    $.ajax({
-        url:"./controller/deleteVariationController.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Successfully deleted');
-            $('form').trigger('reset');
-            showProductSizes();
-        }
-    });
-}
-
-//edit variation data
-function variationEditForm(id){
-    $.ajax({
-        url:"./adminView/editVariationForm.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
-
-
-//update variation after submit
-function updateVariations(){
-    var v_id = $('#v_id').val();
-    var product = $('#product').val();
-    var size = $('#size').val();
-    var qty = $('#qty').val();
-    var fd = new FormData();
-    fd.append('v_id', v_id);
-    fd.append('product', product);
-    fd.append('size', size);
-    fd.append('qty', qty);
-   
-    $.ajax({
-      url:'./controller/updateVariationController.php',
-      method:'post',
-      data:fd,
-      processData: false,
-      contentType: false,
-      success: function(data){
-        alert('Update Success.');
-        $('form').trigger('reset');
-        showProductSizes();
-      }
-    });
-}
 function search(id){
     $.ajax({
         url:"./controller/searchController.php",
@@ -309,30 +184,6 @@ function checkout(){
         data:{record:1},
         success:function(data){
             $('.allContent-section').html(data);
-        }
-    });
-}
-
-
-function removeFromWish(id){
-    $.ajax({
-        url:"./controller/removeFromWishlist.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Removed from wishlist');
-        }
-    });
-}
-
-
-function addToWish(id){
-    $.ajax({
-        url:"./controller/addToWishlist.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Added to wishlist');        
         }
     });
 }
