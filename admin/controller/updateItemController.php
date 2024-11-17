@@ -10,6 +10,7 @@ $p_desc = mysqli_real_escape_string($con, $_POST['p_desc']);
 $p_director = mysqli_real_escape_string($con, $_POST['p_director']);
 $p_actors = mysqli_real_escape_string($con, $_POST['p_actors']);
 $genres = mysqli_real_escape_string($con, $_POST['genres']);
+// $movie_type = mysqli_real_escape_string($con, $_POST['movie_type']);
 $dir = '../uploads/';
 
 // Xử lý ảnh

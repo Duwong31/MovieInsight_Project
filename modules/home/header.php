@@ -1,4 +1,4 @@
-<header>
+<header id="header">
     <a href="index.php" class="logo">
         <img src="./templates/img/icons8-movie-30.png" alt="Movie Insight Logo">
         <p>Movies<br>Insight</p>

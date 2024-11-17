@@ -205,4 +205,5 @@ document.addEventListener("DOMContentLoaded", function() {
             ratingScoreElement.textContent = `★ ${newAverageRating}/10`;
         }
     }
+    
 });

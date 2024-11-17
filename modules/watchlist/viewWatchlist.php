@@ -70,12 +70,14 @@ if(!defined('_CODE')){
                     echo '
                     <div id="movie-' . htmlspecialchars($movie['movie_id']) . '" class="watchlist-item">
                         <div class="watchlist-movie-image">
-                            <img src="./admin/' . htmlspecialchars($movie['movie_image']) . '" alt="' . htmlspecialchars($movie['movie_name']) . '">
+                            <a href="?module=watchlist&action=movie_detail&movie_id=' . htmlspecialchars($movie['movie_id']) . '">
+                                <img src="./admin/' . htmlspecialchars($movie['movie_image']) . '" alt="' . htmlspecialchars($movie['movie_name']) . '">
+                            </a>
                         </div>
                         <div class="watchlist-movie-info">
                             <h2>' . htmlspecialchars($movie['movie_name']) . '</h2>
                             <div class="movie-meta">
-                                <span>⭐ ' . number_format($movie['average_rating'], 1) . '/10</span>
+                                <span class="movie-meta-star">★ ' . number_format($movie['average_rating'], 1) . '/10</span>
                                 <span> ' . htmlspecialchars($movie['release_date']) . '</span>
                             </div>
                             <p>' . htmlspecialchars($movie['movie_desc']) . '</p>

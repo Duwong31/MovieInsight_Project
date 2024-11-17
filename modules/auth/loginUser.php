@@ -6,7 +6,7 @@
     }
 
 $data = [
-    'pageTitle' => 'Đăng nhập tài khoản'
+    'pageTitle' => 'Login Movie Insight'
 ];
 
 layouts('header-login', $data);
@@ -102,8 +102,22 @@ $msg_type = getFlashData('msg_type');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./templates/img/icons8-movie-30.png">
     <title>Login</title>
+    <style>
+        .home-button{
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+        }
+        .home-btn{
+            font-size: 20px;
+            color: #e70634;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
+<button class="home-button"><a class="home-btn" href="?module=home&action=index"><i class="fa-solid fa-house"></i>Home</a></button>
 <div class="row">
     <div class="col-4" style="margin: 50px auto;">
         <h2 class="text-center text-uppercase">Đăng nhập</h2>

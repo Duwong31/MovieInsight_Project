@@ -8,7 +8,7 @@
     }
 
 $data = [
-    'pageTitle' => 'Quên mật khẩu'
+    'pageTitle' => 'Forgot password'
 ];
 
 layouts('header-login', $data);
@@ -75,7 +75,29 @@ $msg_type = getFlashData('msg_type');
 
 
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./templates/img/icons8-movie-30.png">
+    <title>Login</title>
+    <style>
+        .home-button{
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+        }
+        .home-btn{
+            font-size: 20px;
+            color: #e70634;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<button class="home-button"><a class="home-btn" href="?module=home&action=index"><i class="fa-solid fa-house"></i>Home</a></button>
 <div class="row">
     <div class="col-4" style="margin: 50px auto;">
         <h2 class="text-center text-uppercase">Quên mật khẩu</h2>
@@ -84,6 +106,7 @@ $msg_type = getFlashData('msg_type');
                 getSmg($msg, $msg_type);
             }
         ?>
+        
         <form action="" method="post">
             <div class="form-group mg-form">
                 <label for="">Email</label>
@@ -92,12 +115,13 @@ $msg_type = getFlashData('msg_type');
             
             <button type="submit" class="mg-btn btn btn-primary btn-block">Gửi</button>
             <hr>
-            <p class="text-center"><a href="?module=auth&action=login">Đăng nhập</a></p>
+            <p class="text-center"><a href="?module=auth&action=loginUser">Đăng nhập</a></p>
             <p class="text-center"><a href="?module=auth&action=signup">Đăng ký tài khoản</a></p>
         </form>    
     </div>
 </div>
-
+</body>
+</html>
 
 
 

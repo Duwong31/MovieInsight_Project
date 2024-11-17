@@ -1,8 +1,18 @@
 
 
-function showProductItems(){  
+function showMovies(){  
     $.ajax({
         url:"./adminView/viewAllProducts.php",
+        method:"post",
+        data:{record:1},
+        success:function(data){
+            $('.allContent-section').html(data);
+        }
+    });
+}
+function showTVShows(){
+    $.ajax({
+        url:"./adminView/viewAllTVShows.php",
         method:"post",
         data:{record:1},
         success:function(data){
@@ -44,6 +54,7 @@ function addItems(){
     var genres = $('#genres').val(); 
     var upload=$('#upload').val();
     var file = $('#file')[0].files[0];
+    var movie_type = $('#movie_type').val();
 
     var fd = new FormData();
     fd.append('p_name', p_name);
@@ -52,8 +63,9 @@ function addItems(){
     fd.append('p_desc', p_desc);
     fd.append('p_director', p_director); 
     fd.append('p_actors', p_actors);
-    fd.append('genres', genres); // Thay category thành genres
+    fd.append('genres', genres); 
     fd.append('file', file);
+    fd.append('movie_type', movie_type); 
     fd.append('upload', upload);
     $.ajax({
         url: "./controller/addItemController.php",
@@ -62,7 +74,7 @@ function addItems(){
         processData: false,
         contentType: false,
         success: function(data){
-            alert('Movie Added successfully.');
+            alert('Item Added successfully.');
             $('form').trigger('reset');
             showProductItems();
         }
@@ -149,20 +161,6 @@ function genresDelete(id){
     });
 }
 
-//delete size data
-function sizeDelete(id){
-    $.ajax({
-        url:"./controller/deleteSizeController.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            alert('Size Successfully deleted');
-            $('form').trigger('reset');
-            showSizes();
-        }
-    });
-}
-
 function search(id){
     $.ajax({
         url:"./controller/searchController.php",
@@ -176,14 +174,3 @@ function search(id){
 
 
 
-
-function checkout(){
-    $.ajax({
-        url:"./view/viewCheckout.php",
-        method:"post",
-        data:{record:1},
-        success:function(data){
-            $('.allContent-section').html(data);
-        }
-    });
-}
