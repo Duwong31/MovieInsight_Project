@@ -1,6 +1,7 @@
 <?php
 const _CODE = true;
-include_once 'C:/xampp/htdocs/MovieInsightProject/admin/include/connect.php';
+include_once '../include/connect.php';
+
 
 $movie_id = mysqli_real_escape_string($con, $_POST['movie_id']);
 $p_name = mysqli_real_escape_string($con, $_POST['p_name']);

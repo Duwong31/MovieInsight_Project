@@ -1,6 +1,7 @@
 <?php
 const _CODE = true;
-include_once 'C:/xampp/htdocs/MovieInsightProject/admin/include/connect.php';
+include_once '../include/connect.php';
+
 
     
     $c_id=$_POST['record'];

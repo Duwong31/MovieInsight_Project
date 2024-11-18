@@ -120,7 +120,7 @@ $msg_type = getFlashData('msg_type');
 <button class="home-button"><a class="home-btn" href="?module=home&action=index"><i class="fa-solid fa-house"></i>Home</a></button>
 <div class="row">
     <div class="col-4" style="margin: 50px auto;">
-        <h2 class="text-center text-uppercase">Đăng nhập</h2>
+        <h2 class="text-center text-uppercase">Login</h2>
         <?php
             if(!empty($msg)){
                 getSmg($msg, $msg_type);
@@ -129,17 +129,17 @@ $msg_type = getFlashData('msg_type');
         <form action="" method="post">
             <div class="form-group mg-form">
                 <label for="">Email</label>
-                <input name="email" type="email" class="form-control" placeholder="Địa chỉ email">
+                <input name="email" type="email" class="form-control" placeholder="Email address">
             </div>
             <div class="form-group mg-form">
-                <label for="">Mật khẩu</label>
-                <input name="password" type="password" class="form-control" placeholder="Mật khẩu">
+                <label for="">Password</label>
+                <input name="password" type="password" class="form-control" placeholder="Password">
             </div>     
            
-            <button type="submit" class="mg-btn btn btn-primary btn-block">Đăng nhập</button>
+            <button type="submit" class="mg-btn btn btn-primary btn-block">Login</button>
             <hr>
-            <p class="text-center"><a href="?module=auth&action=forgot">Quên mật khẩu</a></p>
-            <p class="text-center"><a href="?module=auth&action=signup">Đăng ký tài khoản</a></p>
+            <p class="text-center"><a href="?module=auth&action=forgot">Forgot password</a></p>
+            <p class="text-center"><a href="?module=auth&action=signup">Create new accountt</a></p>
         </form>    
     </div>
 </div>

@@ -10,7 +10,8 @@
     </thead>
     <?php
       const _CODE = true;
-      include_once 'C:/xampp/htdocs/MovieInsightProject/admin/include/connect.php';
+      include_once '../include/connect.php';
+
 
       $sql = "SELECT * FROM genres";
       $result = $con->query($sql);

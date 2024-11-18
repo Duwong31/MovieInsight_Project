@@ -12,8 +12,8 @@
     </thead>
     <?php
       const _CODE = true;
-      include_once 'C:/xampp/htdocs/MovieInsightProject/admin/include/connect.php';
-
+      include_once '../include/connect.php';
+      
       $sql="SELECT * from users where isAdmin=0";
       $result=$con-> query($sql);
       $count=1;

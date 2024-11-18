@@ -3,7 +3,8 @@
   <h4>Edit Movies Detail</h4>
   <?php
   const _CODE = true;
-  include_once 'C:/xampp/htdocs/MovieInsightProject/admin/include/connect.php';
+  include_once '../include/connect.php';
+
 
   $ID = $_POST['record'];
 

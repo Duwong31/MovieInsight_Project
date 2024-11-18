@@ -1,6 +1,6 @@
 <?php
    session_start();
-   include_once 'C:/xampp/htdocs/MovieInsightProject/admin/include/connect.php';
+   include_once '../admin/include/connect.php';
 
 ?>
        

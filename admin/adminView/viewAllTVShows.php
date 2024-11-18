@@ -13,7 +13,8 @@
         </thead>
         <?php
         const _CODE = true;
-        include_once 'C:/xampp/htdocs/MovieInsightProject/admin/include/connect.php';
+        include_once '../include/connect.php';
+
 
         $sql = "SELECT * from movies 
             JOIN genres ON movies.genres_id = genres.genres_id 

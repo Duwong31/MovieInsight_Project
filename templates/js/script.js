@@ -1,21 +1,4 @@
-const searchInput = document.getElementById('searchInput');
-const clearIcon = document.getElementById('clearIcon');
 
-// Show clear icon when typing
-searchInput.addEventListener('input', function() {
-    if (this.value.length > 0) {
-        clearIcon.style.display = 'block';
-    } else {
-        clearIcon.style.display = 'none';
-    }
-});
-
-// Clear phần tìm kiếm
-clearIcon.addEventListener('click', function() {
-    searchInput.value = '';
-    clearIcon.style.display = 'none';
-    searchInput.focus();
-});
 //Movies
 const productContainers = [...document.querySelectorAll('.movie-container')];
 const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
@@ -55,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(newsBtn){
         newsBtn.addEventListener("click", function() {
             console.log("Button clicked");
-            window.location.href = "?module=watchlist&action=news"; 
+            window.location.href = "?module=view&action=news"; 
         });
     }
 });

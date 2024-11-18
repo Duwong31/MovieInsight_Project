@@ -15,7 +15,7 @@ layouts('header-login', $data);
 
 //Kiểm tra trạng thái đăng nhập
 if(isLogin()){
-    redirect('?module=home&action=dashboard');
+    redirect('?module=home&action=index');
 }
 
 if(isPost()){
@@ -100,7 +100,7 @@ $msg_type = getFlashData('msg_type');
 <button class="home-button"><a class="home-btn" href="?module=home&action=index"><i class="fa-solid fa-house"></i>Home</a></button>
 <div class="row">
     <div class="col-4" style="margin: 50px auto;">
-        <h2 class="text-center text-uppercase">Quên mật khẩu</h2>
+        <h2 class="text-center text-uppercase">Forgot password</h2>
         <?php
             if(!empty($msg)){
                 getSmg($msg, $msg_type);
@@ -110,13 +110,13 @@ $msg_type = getFlashData('msg_type');
         <form action="" method="post">
             <div class="form-group mg-form">
                 <label for="">Email</label>
-                <input name="email" type="email" class="form-control" placeholder="Địa chỉ email">
+                <input name="email" type="email" class="form-control" placeholder="Email address">
             </div>
             
-            <button type="submit" class="mg-btn btn btn-primary btn-block">Gửi</button>
+            <button type="submit" class="mg-btn btn btn-primary btn-block">Send</button>
             <hr>
-            <p class="text-center"><a href="?module=auth&action=loginUser">Đăng nhập</a></p>
-            <p class="text-center"><a href="?module=auth&action=signup">Đăng ký tài khoản</a></p>
+            <p class="text-center"><a href="?module=auth&action=loginUser">Login</a></p>
+            <p class="text-center"><a href="?module=auth&action=signup">Create new account</a></p>
         </form>    
     </div>
 </div>

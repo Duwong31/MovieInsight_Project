@@ -214,6 +214,7 @@ a {
     height: 16px;
 }
 
+
 .clear-icon {
     position: absolute;
     top: 50%;
@@ -595,8 +596,8 @@ a {
     top: 50%;
     z-index: 8;
     font-size: 50px;
-    background-color: var(--menu);
-    border: none;
+    background-color: transparent;
+    border: 1px solid white;
     color: white;
 }
 

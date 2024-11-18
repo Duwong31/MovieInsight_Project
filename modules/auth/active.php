@@ -26,7 +26,7 @@ if(!empty($token)){
             setFlashData('msg', 'Kích hoạt tài khoản không thành công, vui lòng liên hệ quản trị viên');
             setFlashData('msg_type', 'danger');
         }
-        redirect('?module=auth&action=login');
+        redirect('?module=auth&action=loginUser');
     }else{
         getSmg('Liên kết không tồn tại hoặc đã hết hạn!', 'danger');
     }
@@ -34,7 +34,7 @@ if(!empty($token)){
     getSmg('Liên kết không tồn tại hoặc đã hết hạn!', 'danger');
 }
 ?>
-<h1>ACTIVE</h1>
+
 <?php
 layouts('footer-login');
 ?>

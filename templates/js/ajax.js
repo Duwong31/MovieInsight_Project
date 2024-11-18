@@ -33,8 +33,9 @@ function removeFromWatchlist(movieId) {
     .catch(error => console.error('Error:', error));
 }
 
+
 function showMovieDetails(movieId) {
-    fetch('http://localhost/MovieInsightProject/modules/watchlist/movie_detail.php', {
+    fetch('http://localhost/MovieInsightProject/modules/view/movie_detail.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ movie_id: movieId })

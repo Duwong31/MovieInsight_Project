@@ -119,5 +119,5 @@
     </main>
 </body>
 <?php include(__DIR__ . '/../home/footer.php')  ?>
-
+<script src="./templates/js/script.js"></script>
 </html>

@@ -108,7 +108,7 @@ GROUP BY m.movie_id";
                     ?>
                         <div class="movie-card">
                             <div class="movie-image">
-                                <a href="?module=watchlist&action=movie_detail&movie_id=<?php echo $value['movie_id']; ?>">
+                                <a href="?module=view&action=movie_detail&movie_id=<?php echo $value['movie_id']; ?>">
                                     <img src="./admin/<?php echo htmlspecialchars($value['movie_image']); ?>" class="movie-thumb" alt="<?php echo htmlspecialchars($value['movie_name']); ?>">
                                 </a>
                                 <button class="addToWatchlist-btn" onclick="addToWatchlist(<?php echo $movie; ?>)">Add to watchlist</button>
@@ -179,7 +179,7 @@ GROUP BY tv.movie_id";
                     ?>
                         <div class="movie-card">
                             <div class="movie-image">
-                                <a href="?module=watchlist&action=movie_detail&movie_id=<?php echo $tvShowId; ?>">
+                                <a href="?module=view&action=movie_detail&movie_id=<?php echo $tvShowId; ?>">
                                     <img src="./admin/<?php echo htmlspecialchars($value['movie_image']); ?>" class="movie-thumb" alt="<?php echo htmlspecialchars($value['movie_name']); ?>">
                                 </a>
                                 <button class="addToWatchlist-btn" onclick="addToWatchlist(<?php echo $tvShowId; ?>)">Add to watchlist</button>

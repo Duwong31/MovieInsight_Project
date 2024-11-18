@@ -138,7 +138,7 @@ $old = getFlashData('old');
 <button class="home-button"><a class="home-btn" href="?module=home&action=index"><i class="fa-solid fa-house"></i>Home</a></button>
 <div class="row">
     <div class="col-4" style="margin: 50px auto;">
-        <h2 class="text-center text-uppercase">Đăng ký tài khoản</h2>
+        <h2 class="text-center text-uppercase">Sign up</h2>
         <?php
         if (!empty($smg)) {
             getSmg($smg, $smg_type);
@@ -146,45 +146,45 @@ $old = getFlashData('old');
         ?>
         <form action="" method="post">
             <div class="form-group mg-form">
-                <label for="">Họ tên</label>
-                <input type="text" name="fullname" class="form-control" placeholder="Họ tên" value="<?php echo old('fullname', $old) ?>">
+                <label for="">Fullname</label>
+                <input type="text" name="fullname" class="form-control" placeholder="fullname" value="<?php echo old('fullname', $old) ?>">
                 <?php
                 echo form_error('fullname', '<span class="error">', '</span>', $errors);
                 ?>
             </div>
             <div class="form-group mg-form">
                 <label for="">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Địa chỉ email" value="<?php echo old('email', $old) ?>">
+                <input type="email" name="email" class="form-control" placeholder="Email address" value="<?php echo old('email', $old) ?>">
                 <?php
                 echo form_error('email', '<span class="error">', '</span>', $errors);
                 ?>
             </div>
             <div class="form-group mg-form">
-                <label for="">Số điện thoại</label>
+                <label for="">Phone number</label>
                 <input type="text" name="phone" class="form-control" placeholder="084-XXX-XXXX" value="<?php echo old('phone', $old) ?>">
                 <?php
                 echo form_error('phone', '<span class="error">', '</span>', $errors);
                 ?>
             </div>
             <div class="form-group mg-form">
-                <label for="">Mật khẩu</label>
-                <input type="password" name="password" class="form-control" placeholder="Mật khẩu">
+                <label for="">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password">
                 <?php
                 echo form_error('password', '<span class="error">', '</span>', $errors);
                 ?>
             </div>
             <div class="form-group mg-form">
-                <label for="">Nhập lại mật khẩu</label>
-                <input type="password" name="password_confirm" class="form-control" placeholder="Nhập lại mật khẩu">
+                <label for="">Confirm password</label>
+                <input type="password" name="password_confirm" class="form-control" placeholder="Confirm password">
                 <?php
                 echo form_error('password_confirm', '<span class="error">', '</span>', $errors);
                 ?>
             </div>
 
-            <button type="submit" class="mg-btn btn btn-primary btn-block">Đăng ký</button>
+            <button type="submit" class="mg-btn btn btn-primary btn-block">Sign up</button>
             <hr>
 
-            <p class="text-center"><a href="?module=auth&action=loginUser">Đăng nhập tài khoản</a></p>
+            <p class="text-center"><a href="?module=auth&action=loginUser">Login</a></p>
         </form>
     </div>
 </div>

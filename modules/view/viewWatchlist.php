@@ -70,7 +70,7 @@ if(!defined('_CODE')){
                     echo '
                     <div id="movie-' . htmlspecialchars($movie['movie_id']) . '" class="watchlist-item">
                         <div class="watchlist-movie-image">
-                            <a href="?module=watchlist&action=movie_detail&movie_id=' . htmlspecialchars($movie['movie_id']) . '">
+                            <a href="?module=view&action=movie_detail&movie_id=' . htmlspecialchars($movie['movie_id']) . '">
                                 <img src="./admin/' . htmlspecialchars($movie['movie_image']) . '" alt="' . htmlspecialchars($movie['movie_name']) . '">
                             </a>
                         </div>

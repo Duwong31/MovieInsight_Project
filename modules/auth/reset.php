@@ -48,7 +48,7 @@ if (!empty($token)) {
                 if($updateStatus){
                     setFlashData('msg', 'Thay đổi mật khẩu thành công!!');
                     setFlashData('msg_type', 'success');
-                    redirect('?module=auth&action=login');
+                    redirect('?module=auth&action=loginUser');
                 }else{
                     setFlashData('msg', 'Lỗi hệ thống vui lòng thử lại sau!!');
                     setFlashData('msg_type', 'danger');
@@ -94,7 +94,7 @@ $errors = getFlashData('errors');
                     <button type="submit" class="mg-btn btn btn-primary btn-block">Gửi</button>
                     <hr>
 
-                    <p class="text-center"><a href="?module=auth&action=login">Đăng nhập tài khoản</a></p>
+                    <p class="text-center"><a href="?module=auth&action=loginUser">Đăng nhập tài khoản</a></p>
                 </form>
             </div>
         </div>
