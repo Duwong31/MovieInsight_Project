@@ -103,9 +103,9 @@
         </label>
         <a class="menu-tag">Menu</a>
         <ul class="menu">
-            <li><a href="#movie-section">Movies</a></li>
-            <li><a href="#tvshow-section">TV Shows</a></li>
-            <li><a href="#celeb-section">Celebs</a></li>
+            <li><a href="?module=view&action=movieList">Movies</a></li>
+            <li><a href="?module=view&action=tvshowsList">TV Shows</a></li>
+            <li><a href="?module=view&action=celebList">Celebs</a></li>
             <li><a href="?module=view&action=news">News</a></li>
         </ul>
         <form action="" class="search-box">
